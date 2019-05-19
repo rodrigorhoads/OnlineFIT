@@ -1,0 +1,74 @@
+<div class="col-md-6">
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <td>Dieta</td>
+            </tr>
+
+
+            <tr>
+                <th>Refeicão</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($listRefeicoes as $refeicao) { ?>
+            <tr>
+                <td><?php echo $refeicao['tipoRefeicoa'] ?></td>
+                <td><?php echo $refeicao['pratoS'] ?></td>
+                <td><?php echo $refeicao['pratoT'] ?></td>
+                <td><?php echo $refeicao['pratoQ'] ?></td>
+                <td><?php echo $refeicao['pratoQ2'] ?></td>
+                <td><?php echo $refeicao['pratoS2'] ?></td>
+                <td><?php echo $refeicao['prato3'] ?></td>
+                <td><?php echo $refeicao['pratoD'] ?></td>
+            </tr>
+            <?php } ?>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Exercício</td>
+            </tr>
+
+
+            <tr>
+                <th>Dia da Semana</th>
+                <th>Exercicio</th>
+                <th>Nº Séries</th>
+                <th>Nº Repetições</th>
+                <th>Duração</th>
+                <th>Grupo Múscular</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($treino->getExercicios() as $exercicio) {
+            ?>
+
+            <tr>
+                <td><?php echo $exercicio['diaDaSemana'] ?></td>
+                <td><?php echo $exercicio['Nome'] ?></td>
+                <td><?php echo $exercicio['series'] ?></td>
+                <td><?php echo $exercicio['NRepeticoes'] ?></td>
+                <td><?php echo $exercicio['duracao'] ?></td>
+                <td><?php echo $exercicio['grupoMuscular'] ?></td>
+            </tr>
+            <?php } ?>
+            </tbody>
+
+        </table>
+    </div>
+</div>

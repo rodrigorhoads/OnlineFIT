@@ -1,0 +1,16 @@
+{
+    "name": "rodrigorhoads/onlinefit",
+    "authors": [
+        {
+            "name": "rodrigorhoads"
+        }
+    ],
+    "require": {
+      "slim/slim":"~3."
+    },
+    "autoload": {
+        "psr-4": {          
+          "ONLINEFIT\\": "vendor\\Classes\\src"
+        }
+    }
+}
