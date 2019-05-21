@@ -3,40 +3,10 @@
 
 class Refeicao
 {
-    private $tipoRefeicoa;
+    private $horario;
     private $prato;
+    public $fotoRefeicao;
 
-    /**
-     * @return mixed
-     */
-    public function getDia()
-    {
-        return $this->dia;
-    }
-
-    /**
-     * @param mixed $dia
-     */
-    public function setDia($dia)
-    {
-        $this->dia = $dia;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTipoRefeicoa()
-    {
-        return $this->tipoRefeicoa;
-    }
-
-    /**
-     * @param mixed $tipoRefeicoa
-     */
-    public function setTipoRefeicoa($tipoRefeicoa)
-    {
-        $this->tipoRefeicoa = $tipoRefeicoa;
-    }
 
     /**
      * @return mixed
@@ -69,4 +39,5 @@ class Refeicao
     {
         $this->prato = $prato;
     }
+
 }

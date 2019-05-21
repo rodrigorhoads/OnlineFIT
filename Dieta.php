@@ -4,8 +4,25 @@
 class Dieta
 {
     private $tipoDieta;
-    private $id;
+    private $dia;
     private $refeicoes = array();
+    public  $dicaDieta;
+
+    /**
+     * @return mixed
+     */
+    public function getDia()
+    {
+        return $this->dia;
+    }
+
+    /**
+     * @param mixed $dia
+     */
+    public function setDia($dia)
+    {
+        $this->dia = $dia;
+    }
 
     /**
      * @return mixed
@@ -24,22 +41,6 @@ class Dieta
     }
 
     /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return array
      */
     public function getRefeicoes()
@@ -50,7 +51,7 @@ class Dieta
     /**
      * @param array $refeicoes
      */
-    public function setRefeicoes($refeicoes)
+    public function setRefeicoes($refeicoes = array())
     {
 
         $this->refeicoes = $refeicoes;

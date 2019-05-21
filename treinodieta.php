@@ -3,7 +3,7 @@ require_once('./TreinoRepository.php');
 require_once('./DietaRepository.php');
 require_once('./Treino.php');
 require_once('./Dieta.php');
-
+require_once ('RefeicaoRepository.php');
 
 $treinoRepository = new TreinoRepository();
 $dietaRepository = new DietaRepository();
@@ -16,8 +16,7 @@ if (count($_POST) > 0) {
         unset($_SESSION['falhou']);
 
 
-//    print_r($_POST);
-//    exit;
+
 
     $altura = $_POST['altura'];
     $peso = $_POST['peso'];
@@ -47,14 +46,12 @@ if (count($_POST) > 0) {
 
         $treinos = $treinoRepository->retornaTreino('ficaremforma',$situacao);
 
-        $dieta = $dietaRepository->retornaDieta('ficaremforma',$situacao);
+        $dietas = $dietaRepository->retornaDieta('ficaremforma',$situacao);
 
     }  else {
         $_SESSION['falhou'] = "Selecione um objetivo.";
         header('Location: /OnlineFIT');
     }
-
-    $listRefeicoes = $dieta->getRefeicoes();
 
 
 }
@@ -123,170 +120,194 @@ if (count($_POST) > 0) {
 
     <div class="row">
 
-        <div class="col-sm-12">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active"
-                       id="home-tab" data-toggle="tab"
-                       href="#home" role="tab"
-                       aria-controls="home"
-                       ria-selected="true">Treino</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab"
-                       data-toggle="tab" href="#dieta"
-                       role="tab" aria-controls="profile"
-                       aria-selected="false">Dieta</a>
-                </li>
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               id="home-tab" data-toggle="tab"
+                               href="#home" role="tab"
+                               aria-controls="home"
+                               ria-selected="true">Treino</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab"
+                               data-toggle="tab" href="#dieta"
+                               role="tab" aria-controls="profile"
+                               aria-selected="false">Dieta</a>
+                        </li>
 
-            </ul>
+                    </ul>
 
-            <div class="tab-content" id="myTabContent">
+                    <div class="tab-content" id="myTabContent">
 
-                <div class="tab-pane fade show active"
-                     id="home" role="tabpanel" aria-labelledby="home-tab">
-
-
-                    <div class="row">
-                        <div class="col-sm-12">
-
-                            <ul class="nav nav-tabs" id="myTabTreino" role="tablist">
-
-                                <?php foreach ($treinos as $treino){?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="<?php echo $treino->diaExercicio?>-tab"
-                                           data-toggle="tab" href="#<?php echo $treino->diaExercicio?>"
-                                           role="tab" aria-controls="<?php echo $treino->diaExercicio?>"
-                                           aria-selected="false"><?php echo $treino->diaExercicio?></a>
-                                    </li>
-                                <?php }?>
+                        <div class="tab-pane fade show active"
+                             id="home" role="tabpanel" aria-labelledby="home-tab">
 
 
+                            <div class="row">
+                                <div class="col-sm-12">
 
-                            </ul>
-                            <div class="tab-content" id="myTabContentTreino">
+                                    <ul class="nav nav-tabs" id="myTabTreino" role="tablist">
 
-
-                                <?php foreach ($treinos as $index=>$treino){
-
-                                    if($index == 0){
-                                        echo '<div class="tab-pane fade show active"
-                                        id="'.$treino->diaExercicio.'"role="tabpanel" aria-labelledby="home-tab">';
-                                    }else{
-                                        echo '<div class="tab-pane fade show"
-                                        id="'.$treino->diaExercicio.'" role="tabpanel" aria-labelledby="home-tab">';
-                                    }
-                                    ?>
+                                        <?php foreach ($treinos as $treino){?>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="<?php echo $treino->diaExercicio?>-tab"
+                                                   data-toggle="tab" href="#<?php echo $treino->diaExercicio?>"
+                                                   role="tab" aria-controls="<?php echo $treino->diaExercicio?>"
+                                                   aria-selected="false"><?php echo $treino->diaExercicio?></a>
+                                            </li>
+                                        <?php }?>
 
 
-                                    <div class="row">
+
+                                    </ul>
+                                    <div class="tab-content" id="myTabContentTreino">
+
+
+                                        <?php foreach ($treinos as $index=>$treino){
+
+                                            if($index == 0){
+                                                echo '<div class="tab-pane fade show active"
+                                                id="'.$treino->diaExercicio.'"role="tabpanel" aria-labelledby="home-tab">';
+                                            }else{
+                                                echo '<div class="tab-pane fade show"
+                                                id="'.$treino->diaExercicio.'" role="tabpanel" aria-labelledby="home-tab">';
+                                            }
+                                            ?>
+
+
+                                            <div class="row">
+
+                                                <?php
+                                                $listaExercicios = $treino->getExercicios();
+
+                                                ?>
+                                                <?php foreach ($listaExercicios as $key=>$exercicios ) { ?>
+
+                                                <div class="card col-sm-4">
+                                                    <div class="card-title">
+
+                                                        <?php
+                                                        echo "Exercicio : ".$key;?>
+
+                                                    </div>
+
+                                                    <img class="card-img-top" src="<?php echo $exercicios->fotoExercicio;?>"
+                                                         alt="Card image cap" style="max-height: 200px">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title"><?php echo $exercicios->getNome();?></h4>
+                                                        <h5 class="card-text">Grupo Muscular :<?php echo $exercicios->getGrupoMuscular();?></h5>
+                                                        <h5 class="card-text">Duração :<?php echo $exercicios->getDuracao();?></h5>
+                                                        <h5 class="card-text">Repetições: <?php echo $exercicios->getNRepeticoes() ?></h5>
+                                                        <h5 class="card-text">Series: <?php echo $exercicios->getSeries() ?></h5>
+                                                    <h5 class="card-text"><?php echo $treino->dicaTreino?></h5>
+                                                    </div>
+                                                </div>
+
+                                                <?php } ?>
+
+
+                                            </div>
+
+                                            <?php
+
+                                            echo '</div>';} ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab-pane fade" id="dieta"
+                             role="tabpanel"
+                             aria-labelledby="dieta-tab">
+
+                            <div class="row">
+                                <div class="card col-sm-12">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Coma em intervalos regulares, evitando ficar muito tempo sem comer</h5>
+                                        <p class="card-text">Pequenas porções.</p>
+                                        <p class="card-text">
+                                            <small class="text-muted">Dica</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+
+                                <ul class="nav nav-tabs" id="myTabDieta" role="tablist">
+
+                                    <?php foreach ($dietas as $dieta){?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="<?php echo $dieta->getDia()?>-tab"
+                                               data-toggle="tab" href="#<?php echo $dieta->getDia()?>"
+                                               role="tab" aria-controls="<?php echo $dieta->getDia()?>"
+                                               aria-selected="false"><?php echo $dieta->getDia()?></a>
+                                        </li>
+                                    <?php }?>
+
+
+
+                                </ul>
+
+                                <div class="tab-content" id="myTabContentDieta">
+
+
+                                    <?php foreach ($dietas as $indexDieta=>$dieta){
+
+                                        if($indexDieta == 0){
+                                            echo '<div class="tab-pane fade show active"
+                                                id="'.$dieta->getDia().'"role="tabpanel" aria-labelledby="home-tab">';
+                                        }else{
+                                            echo '<div class="tab-pane fade show"
+                                                id="'.$dieta->getDia().'" role="tabpanel" aria-labelledby="home-tab">';
+                                        }
+                                        ?>
+
+
+                                        <div class="row">
+
+                                            <?php
+
+                                            $listaRefeicoes = $dieta->getRefeicoes();
+
+                                            ?>
+                                            <?php foreach ($listaRefeicoes as $keyD=>$refeicao ) { ?>
+
+                                                <div class="card col-sm-4">
+                                                    <div class="card-title">
+
+                                                        <?php
+                                                        echo "Refeição : ".$keyD;?>
+
+                                                    </div>
+
+                                                    <img class="card-img-top" src="<?php echo $refeicao->fotoRefeicao;?>"
+                                                         alt="Card image cap" style="max-height: 200px">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title"><?php echo $refeicao->getHorario();?></h4>
+                                                        <h5 class="card-text">Refeição:<?php echo $refeicao->getPrato();?></h5>
+                                                        <h5 class="card-text"><?php echo $dieta->dicaDieta?></h5>
+                                                    </div>
+                                                </div>
+
+                                            <?php } ?>
+
+
+                                        </div>
 
                                         <?php
-                                        $listaExercicios = $treino->getExercicios();
 
-                                        ?>
-                                        <?php foreach ($listaExercicios as $key=>$exercicios ) { ?>
+                                        echo '</div>';} ?>
+                                </div>
 
-                                                        <div class="card col-sm-4">
-                                                            <div class="card-title">
-
-                                                                <?php
-                                                                echo "Exercicio : ".$key;?>
-
-                                                            </div>
-
-                                                            <img class="card-img-top" src="<?php echo $exercicios->fotoExercicio;?>"
-                                                                 alt="Card image cap" style="max-height: 200px">
-                                                            <div class="card-body">
-                                                                <h4 class="card-title"><?php echo $exercicios->getNome();?></h4>
-                                                                <h5 class="card-text">Grupo Muscular :<?php echo $exercicios->getGrupoMuscular();?></h5>
-                                                                <h5 class="card-text">Duração :<?php echo $exercicios->getDuracao();?></h5>
-                                                                <h5 class="card-text">Repetições: <?php echo $exercicios->getNRepeticoes() ?></h5>
-                                                                <h5 class="card-text">Series: <?php echo $exercicios->getSeries() ?></h5>
-                                                            <h5 class="card-text"><?php echo $treino->dicaTreino?></h5>
-                                                            </div>
-                                                        </div>
-
-                                        <?php } ?>
-
-
-                                    </div>
-
-                                    <?php
-
-                                    echo '</div>';} ?>
                             </div>
+
                         </div>
-                    </div>
-                </div>
-
-
-                <div class="tab-pane fade" id="dieta"
-                     role="tabpanel"
-                     aria-labelledby="dieta-tab">
-
-                    <div class="row">
-                        <div class="card col-sm-12">
-                            <div class="card-body">
-                                <h5 class="card-title">Coma em intervalos regulares, evitando ficar muito tempo sem comer</h5>
-                                <p class="card-text">Pequenas porções.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Dica</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <?php foreach ($listRefeicoes as $refeicao) { ?>
-
-                            <div class="card col-sm-3 mt-1 mr-2">
-                                <img class="card-img-top" src="<?php echo $refeicao['fotoRefeicao1'] ?>"
-                                     alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo $refeicao['diaSemana'] ?></h4>
-                                    <h5 class="card-title"><?php echo $refeicao['ref1'] ?></h5>
-                                    <p class="card-text"> <?php echo $refeicao['ref1Prato'] ?>.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Dica</small>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="card col-sm-3  mt-1 mr-2">
-                                <img class="card-img-top" src="<?php echo $refeicao['fotoRefeicao2'] ?>"
-                                     alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo $refeicao['diaSemana'] ?></h4>
-                                    <h5 class="card-title"><?php echo $refeicao['ref2'] ?></h5>
-                                    <p class="card-text"> <?php echo $refeicao['ref2Prato'] ?>.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Dica</small>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="card col-sm-3  mt-1">
-                                <img class="card-img-top" src="<?php echo $refeicao['fotoRefeicao3'] ?>"
-                                     alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo $refeicao['diaSemana'] ?></h4>
-                                    <h5 class="card-title"><?php echo $refeicao['ref3'] ?></h5>
-                                    <p class="card-text"> <?php echo $refeicao['ref3Prato'] ?>.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Dica</small>
-                                    </p>
-                                </div>
-                            </div>
-
-                        <?php } ?>
 
                     </div>
-
-                </div>
-
-            </div>
 
         </div>
 

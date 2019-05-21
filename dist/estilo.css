@@ -55,7 +55,9 @@ body{
 
 
 .btnTreino{
-    background: -webkit-linear-gradient(#ff0e3b, #333);}
+    background: linear-gradient(to right,#fff,lightskyblue);
+    color:black;
+}
 
 .txtlogo{
     font-size: 4.1em;
