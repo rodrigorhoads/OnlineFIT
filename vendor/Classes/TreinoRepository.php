@@ -1,8 +1,12 @@
 <?php
 
-require_once ('Treino.php');
-require_once ('Exercicio.php');
-require_once ('ExercicioRepository.php');
+
+namespace ONLINEFIT;
+
+use \ONLINEFIT\Treino;
+use \ONLINEFIT\Exercicio;
+use \ONLINEFIT\ExercicioRepository;
+
 
 class TreinoRepository{
 

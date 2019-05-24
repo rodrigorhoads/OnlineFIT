@@ -1,6 +1,10 @@
 <?php
 
-require_once ('Exercicio.php');
+namespace ONLINEFIT;
+
+use \ONLINEFIT\Exercicio;
+
+
 
 
 class ExercicioRepository

@@ -1,8 +1,11 @@
 <?php
 
-require_once ('Dieta.php');
-require_once ('Refeicao.php');
-require_once ('RefeicaoRepository.php');
+namespace ONLINEFIT;
+
+use \ONLINEFIT\Dieta;
+use \ONLINEFIT\Refeicao;
+use \ONLINEFIT\RefeicaoRepository;
+
 
 class DietaRepository
 {

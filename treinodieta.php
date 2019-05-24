@@ -1,9 +1,16 @@
 <?php
-require_once('./TreinoRepository.php');
-require_once('./DietaRepository.php');
-require_once('./Treino.php');
-require_once('./Dieta.php');
-require_once ('RefeicaoRepository.php');
+
+
+
+require_once("vendor/autoload.php");
+
+use \ONLINEFIT\Dieta;
+use \ONLINEFIT\Treino;
+use \ONLINEFIT\TreinoRepository;
+use \ONLINEFIT\DietaRepository;
+use \Dompdf\Dompdf;
+
+session_start();
 
 $treinoRepository = new TreinoRepository();
 $dietaRepository = new DietaRepository();
@@ -53,7 +60,10 @@ if (count($_POST) > 0) {
         header('Location: /OnlineFIT');
     }
 
-
+    if(isset($treinos) && isset($dietas)){
+        $_SESSION['treinos'] = $treinos;
+        $_SESSION['dietas'] = $dietas;
+    }
 }
 
 ?>
@@ -111,7 +121,7 @@ if (count($_POST) > 0) {
                     <h5 class="card-title">Seu IMC é:<?php echo $imc?></h5>
                     <p class="card-text">Voce está:<?php echo $situacao?> </p>
                     <p class="card-text">
-                        <small class="text-muted">Dica</small>
+                        <a href="/OnlineFIT/gerapdf.php">Pdf</a>
                     </p>
                 </div>
             </div>

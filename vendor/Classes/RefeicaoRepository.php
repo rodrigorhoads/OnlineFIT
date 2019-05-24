@@ -1,5 +1,9 @@
 <?php
-require_once ('Refeicao.php');
+
+namespace ONLINEFIT;
+
+use \ONLINEFIT\Refeicao;
+
 
 class RefeicaoRepository
 {

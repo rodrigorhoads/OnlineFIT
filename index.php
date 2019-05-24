@@ -5,9 +5,6 @@ session_start();
         echo "chegou requisião";
         exit;
     }
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
