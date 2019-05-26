@@ -277,8 +277,8 @@ class TreinoRepository{
                     $this->treino->setExercicios(array(
 
                         ExercicioRepository::getExercicioAquecimento(2)
-                    ,ExercicioRepository::getExercicioAquecimento(5)
-                    , ExercicioRepository::getExercicioAquecimento(6)
+                    ,ExercicioRepository::getExercicioAquecimento(3)
+                    , ExercicioRepository::getExercicioAquecimento(5)
                     ));
                     $this->listaTreino[] = $this->treino;
 

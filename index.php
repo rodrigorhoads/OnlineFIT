@@ -112,16 +112,11 @@ if(isset($_SESSION['falhou'])){
         </div>
     </div>
 </div>
-<!---->
-<!--<div class="mx-auto" style="position: absolute ;right: 17%;top:50% ">-->
-<!--    <h1 class="txtFrase">Sáude é vida veja como está a sua.</h1>-->
-<!--</div>-->
 
-<!--<div class="container" style="position: absolute;top:100%;">-->
     <div class="container">
 <div class="row">
     <div class="col-md-12 jumbotron my-0">
-        <h1 class="">Informe seus dados, e saiba como está o seu IMC.</h1>
+        <h1 class="">Informe seus dados, saiba como está o seu IMC e receba uma sugestão de treino e dieta para alcançar seu objetivo.</h1>
     </div>
 </div>
 
@@ -131,7 +126,7 @@ if(isset($_SESSION['falhou'])){
             <div class="row mx-auto">
                 <div class="col-md-4"></div>
 
-                <div class="col-md-6" id="coisa">
+                <div class="col-md-6 mt-3" id="coisa">
                     <form action="treinodieta.php" method="post">
                         <div class="row">
                             <div class="form-group col-md-8">
@@ -157,11 +152,11 @@ if(isset($_SESSION['falhou'])){
                             <div class="offset-2 form-group col-sm-8">
 
                                 <label class="btn" >
-                                    <img src="dist/img/femtrans.png"  class="check" >
+                                    <img src="dist/img/femtrans.png"  class="check" id="imgfem">
                                     <input type="checkbox" id="chkFem" value="fem" hidden>
                                 </label>
                                 <label class="btn" >
-                                    <img src="dist/img/masctrans.png"  class="check">
+                                    <img src="dist/img/masctrans.png"  class="check" id="imgman">
                                     <input type="checkbox" id="chkMask" hidden value="man">
                                 </label>
                             </div>
@@ -198,94 +193,22 @@ if(isset($_SESSION['falhou'])){
             </div>
 
         </div>
+        <div id="Pmodal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h2 id="txtMd1">.</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="dist/js/jquery.min.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $('#btnEnviar').on('click', function () {
-            nome = $('#txtNome').val();
-            altura = $('#txtAltura').val();
-            peso = $('#txtPeso').val();
-
-            objetivo = '';
-
-            console.log('chkmask = '+!$('#chkMask').is(':checked'));
-            console.log('chkfem = '+!$('#chkFem').is(':checked'));
-
-            if((!$('#chkMask').is(':checked')) && (!$('#chkFem').is(':checked'))){
-                alert("Informe o seu gênero.")
-                return false;
-            }
-
-
-            console.log($('#chkEmag').is(':checked'));
-
-            console.log($('#chkEFomr').is(':checked'));
-
-            if((!$('#chkEmag').is(':checked')) && (!$('#chkEFomr').is(':checked'))){
-                alert("Informe o seu objetivo.")
-                return false;
-            }
-
-
-            if ($('#chkEmag').is(':checked')) {
-                objetivo = 'Emagrecer';
-            }
-            if ($('#chkEFomr').is(':checked')) {
-                objetivo = 'Ficar em forma';
-            }
-
-            // $.ajax({
-            //     url:'treinodieta.php',
-            //     data:{emagrecer:'Emagrecer'},
-            //     type:'POST',
-            //     success:   function ($data) {
-            //         console.log($data);
-            //         $('#retornos').html($data);
-            //     }
-            // });
-
-        });
-
-        $('.check').click(function () {
-           $(this).toggleClass('img-check');
-           console.log($(this).siblings().is('input'));
-            var irmao = $(this).siblings()[0];
-
-            if($(irmao).val() === 'man'){
-                $('#imgfem').attr('class','check');
-            }else
-            {
-                $('#imgman').attr('class','check');
-            }
-
-        });
-
-    });
-
-
-    jQuery(function () {
-        jQuery(window).scroll(function () {
-            console.log(jQuery(this).scrollTop());
-            if (jQuery(this).scrollTop() > 100) {
-                $("#cabecalho").css('position', 'fixed');
-                $("#cabecalho").removeClass('mt-4');
-                $("#cabecalho").css('top', '0');
-                $("#cabecalho").css('background', 'linear-gradient(to left,#fff,lightskyblue )');
-
-            } else {
-                $("#cabecalho").css('position', 'absolute');
-                $("#cabecalho").addClass('mt-4');
-                $("#cabecalho").css('background', '');
-            }
-        });
-    });
-</script>
-
+<script type="text/javascript" src="dist/js/main.js"></script>
 </body>
 </html>

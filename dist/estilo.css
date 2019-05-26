@@ -89,12 +89,25 @@ body{
     left: 12%;
     width: 100%;
     /*height: 100%;*/
-    height:497px;
+    height:635px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .slide{
-    height:497px;
+    height:635px;
+}
+
+.bodyIMCalto{
+    /*position: absolute;*/
+    top: 0;
+    left: 12%;
+    width: 80%;
+    height: 100%;
+    height:635px;
+    background-image: url(img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
