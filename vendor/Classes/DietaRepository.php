@@ -15,6 +15,8 @@ class DietaRepository
     public function retornaDieta($objetivoDieta,$situacao){
 
 
+
+
         switch ($objetivoDieta){
             case 'ficaremforma';
 
@@ -515,7 +517,7 @@ class DietaRepository
                 return $this->listaDieta;
             }
 
-                break;
+
             case "definir":
                 if($situacao === "Peso normal") {
                     $this->dieta = new Dieta();
@@ -538,7 +540,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Terca_feira");
 
                     $this->dieta->setRefeicoes(
                             array(
@@ -556,7 +558,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quarta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
@@ -573,7 +575,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quinta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
@@ -590,7 +592,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sexta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
@@ -607,7 +609,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sabado");
 
                     $this->dieta->setRefeicoes(
                         array(
@@ -624,7 +626,7 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Domingo");
 
                     $this->dieta->setRefeicoes(
                         array(
@@ -648,11 +650,11 @@ class DietaRepository
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -661,15 +663,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Terca_feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("peito de peru + torrada integral  + vitamina frutas","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("macarrão integral + legumes e verduras + carne vermelha grelhada","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -679,15 +681,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quarta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -696,15 +698,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quinta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -713,15 +715,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sexta_Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -730,15 +732,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sabado");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -747,15 +749,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Domingo");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("3 ovos + pão integral + queijo cotage + 1 fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("3 colheres de arroz integral + 1 concha e feijão + legumes e verduras + 2 files de frango grelhado","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("1 fruta + 2 castanhas + 1 iogurte light","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("verduras e legumes + 1 bife grelhado","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("chá preto + 2 torradas","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -771,11 +773,11 @@ class DietaRepository
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -784,15 +786,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Terca Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -802,15 +804,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quarta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -819,15 +821,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quinta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -837,15 +839,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sexta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -854,15 +856,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sábado");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -871,15 +873,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Domingo");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -894,11 +896,11 @@ class DietaRepository
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -907,15 +909,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Terca Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -925,15 +927,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quarta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -942,15 +944,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Quinta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -959,15 +961,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sexta Feira");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -976,15 +978,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Sabado");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );
@@ -993,15 +995,15 @@ class DietaRepository
                     $this->dieta = new Dieta();
 
                     $this->dieta->getTipoDieta('Hipo Calorica');
-                    $this->dieta->setDia("Segunda Feira");
+                    $this->dieta->setDia("Domingo");
 
                     $this->dieta->setRefeicoes(
                         array(
-                            RefeicaoRepository::RetornaRefeicao("","9:00","dist/img/cafe.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","12:00","dist/img/almoco.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","15:00","dist/img/lanche.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","18:00","dist/img/jantar.jpg"),
-                            RefeicaoRepository::RetornaRefeicao("","21:00","dist/img/lanche.jpg")
+                            RefeicaoRepository::RetornaRefeicao("laticinios + cereais + proteina + fruta +carboidrato","9:00","dist/img/cafe.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("Vegetais + Carnes + Leguminosas + cereais +carboidrato","12:00","dist/img/almoco.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + laticinio + proteina +carboidrato","15:00","dist/img/lanche.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("vegetais + proteina +carboidrato","18:00","dist/img/jantar.jpg"),
+                            RefeicaoRepository::RetornaRefeicao("fruta + leguminosa + carboidrato","21:00","dist/img/lanche.jpg")
                         )
 
                     );

@@ -220,6 +220,7 @@ class ExercicioRepository
 
                 $exercicio->setNome("Tríceps na polia com barra (pulley)");
                 $exercicio->setDuracao("");
+                $exercicio->fotoExercicio='dist/img/tricepspoliabarra.jpg';
                 $exercicio->setGrupoMuscular("Membros Superiores");
                 $exercicio->setNRepeticoes("15");
                 $exercicio->setSeries("3");
@@ -242,6 +243,7 @@ class ExercicioRepository
 
                 $exercicio->setNome("Elevação lateral");
                 $exercicio->setDuracao("");
+                $exercicio->fotoExercicio='dist/img/elevacaolateral.jpg';
                 $exercicio->setGrupoMuscular("Membros Superiores");
                 $exercicio->setNRepeticoes("15");
                 $exercicio->setSeries("3");
@@ -261,6 +263,7 @@ class ExercicioRepository
                 $exercicio = new Exercicio();
 
                 $exercicio->setNome("Voador inverso");
+                $exercicio->fotoExercicio='dist/img/voadorinverso.jpg';
                 $exercicio->setDuracao("");
                 $exercicio->setGrupoMuscular("Membros Superiores");
                 $exercicio->setNRepeticoes("15");

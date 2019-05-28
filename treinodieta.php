@@ -86,7 +86,7 @@ if (count($_POST) > 0) {
     if (isset($_POST['definir'])) {
 
         $treinos = $treinoRepository->retornaTreino('definir', $situacao);
-        $dieta = $dietaRepository->retornaDieta('definir', $situacao);
+        $dietas = $dietaRepository->retornaDieta('definir', $situacao);
 
     } elseif (isset($_POST['ficaemforma'])) {
 
@@ -104,6 +104,7 @@ if (count($_POST) > 0) {
         $_SESSION['dietas'] = $dietas;
     }
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -312,10 +313,10 @@ if (count($_POST) > 0) {
 
                                 if ($indexDieta == 0) {
                                     echo '<div class="tab-pane fade show active"
-                                                id="' . $dieta->getDia() . '"role="tabpanel" aria-labelledby="home-tab">';
+                                                id="'.$dieta->getDia().'"role="tabpanel" aria-labelledby="home-tab">';
                                 } else {
                                     echo '<div class="tab-pane fade show"
-                                                id="' . $dieta->getDia() . '" role="tabpanel" aria-labelledby="home-tab">';
+                                                id="'.$dieta->getDia().'" role="tabpanel" aria-labelledby="home-tab">';
                                 }
                                 ?>
 

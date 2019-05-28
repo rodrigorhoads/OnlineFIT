@@ -37,6 +37,17 @@ $(document).ready(function () {
 
     });
 
+    console.log('chkmask = '+!$('#chkMask').is(':checked'));
+    console.log('chkfem = '+!$('#chkFem').is(':checked'));
+
+    if($('#chkMask').is(':checked')){
+        $('#imgman').toggleClass('img-check');
+    }
+
+    if($('#chkFem').is(':checked')){
+        $('#imgfem').toggleClass('img-check');
+    }
+
 
     $('#chkDef').click(function(){
         $('#chkEFomr').prop('checked',false);

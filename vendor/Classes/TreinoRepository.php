@@ -3,6 +3,7 @@
 
 namespace ONLINEFIT;
 
+
 use \ONLINEFIT\Treino;
 use \ONLINEFIT\Exercicio;
 use \ONLINEFIT\ExercicioRepository;
@@ -182,9 +183,11 @@ class TreinoRepository{
                     $this->treino->diaExercicio ="Dias alteranados";
                     $this->treino->setObjetivoTreino('ficaremforma');
                     $this->treino->setExercicios(array(
-
                         ExercicioRepository::getExercicioAquecimento(1)
-                    , ExercicioRepository::getExercicioAquecimento(3)
+                      , ExercicioRepository::getExercicioBraco(1)
+                      , ExercicioRepository::getExercicioBraco(2)
+                      , ExercicioRepository::getExercicioBraco(3)
+                      ,ExercicioRepository::getExercicioBraco(10)
                     ));
                     $this->listaTreino[] = $this->treino;
 
@@ -199,24 +202,27 @@ class TreinoRepository{
                     $this->treino->setExercicios(array(
 
                         ExercicioRepository::getExercicioAquecimento(1)
+                     ,ExercicioRepository::getExercicioAquecimento(5)
                     ,ExercicioRepository::getExercicioAquecimento(3)
                     , ExercicioRepository::getExercicioBraco(3)
                     , ExercicioRepository::getExercicioBraco(1)
-                    , ExercicioRepository::getExercicioPernas(1)
+                    , ExercicioRepository::getExercicioPernas(4)
                     , ExercicioRepository::getExercicioPernas(2)
+                        ,ExercicioRepository::getExercicioBraco(11)
                     ));
                     $this->listaTreino[] = $this->treino;
 
                     $this->treino = new Treino();
-                    $this->treino->diaExercicio ="Terça";
+                    $this->treino->diaExercicio ="Terca";
                     $this->treino->setObjetivoTreino('ficaremforma');
                     $this->treino->setExercicios(array(
 
-                        ExercicioRepository::getExercicioAquecimento(1)
-                    , ExercicioRepository::getExercicioBraco(3)
-                    , ExercicioRepository::getExercicioBraco(1)
-                    , ExercicioRepository::getExercicioPernas(1)
-                    , ExercicioRepository::getExercicioPernas(2)
+                        ExercicioRepository::getExercicioAquecimento(3)
+                        ,ExercicioRepository::getExercicioAquecimento(6)
+                    , ExercicioRepository::getExerciciosPeitoral(3)
+                    , ExercicioRepository::getExerciciosPeitoral(5)
+                    , ExercicioRepository::getExerciciosPeitoral(2)
+                    , ExercicioRepository::getExercicioPernas(3)
                     ));
                     $this->listaTreino[] = $this->treino;
 
@@ -227,11 +233,12 @@ class TreinoRepository{
 
                         ExercicioRepository::getExercicioAquecimento(1)
                     ,ExercicioRepository::getExercicioAquecimento(5)
-
+                    ,ExercicioRepository::getExercicioAquecimento(3)
                     , ExercicioRepository::getExercicioBraco(3)
                     , ExercicioRepository::getExercicioBraco(1)
                     , ExercicioRepository::getExercicioPernas(1)
-                    , ExercicioRepository::getExercicioPernas(2)
+                    , ExercicioRepository::getExercicioPernas(3)
+                    ,ExercicioRepository::getExercicioBraco(11)
                     ));
                     $this->listaTreino[] = $this->treino;
 
@@ -241,10 +248,11 @@ class TreinoRepository{
                     $this->treino->setObjetivoTreino('ficaremforma');
                     $this->treino->setExercicios(array(
 
-                        ExercicioRepository::getExercicioAquecimento(1)
-                    , ExercicioRepository::getExercicioBraco(3)
-                    , ExercicioRepository::getExercicioBraco(1)
-                    , ExercicioRepository::getExercicioPernas(1)
+                        ExercicioRepository::getExercicioAquecimento(3)
+                    ,ExercicioRepository::getExercicioAquecimento(6)
+                    , ExercicioRepository::getExerciciosPeitoral(3)
+                    , ExercicioRepository::getExerciciosPeitoral(5)
+                    , ExercicioRepository::getExerciciosPeitoral(2)
                     , ExercicioRepository::getExercicioPernas(2)
                     ));
                     $this->listaTreino[] = $this->treino;
@@ -256,16 +264,17 @@ class TreinoRepository{
 
                         ExercicioRepository::getExercicioAquecimento(3)
                     ,ExercicioRepository::getExercicioAquecimento(5)
-
-                    , ExercicioRepository::getExercicioBraco(3)
-                    , ExercicioRepository::getExercicioBraco(1)
-                    , ExercicioRepository::getExercicioPernas(1)
+                    , ExercicioRepository::getExercicioBraco(6)
+                    , ExercicioRepository::getExercicioBraco(9)
+                    , ExercicioRepository::getExercicioBraco(7)
+                    , ExercicioRepository::getExercicioPernas(4)
                     , ExercicioRepository::getExercicioPernas(2)
                     ));
                     $this->listaTreino[] = $this->treino;
 
 
                     return $this->listaTreino;
+
                 }elseif($situacao === "Obesidade"){
 
 
